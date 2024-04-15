@@ -15,12 +15,14 @@ window.addEventListener('scroll', function () {
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
 
-/*when we click on the button "#ex3 .js-btn-animal", it puts the first child at the end of the list   */
+/* When we click on the button "#ex3 .js-btn-animal",
+it puts the first child at the end of the list.  */
 
-    document.querySelector("#ex3 .js-btn-animal").addEventListener("click", function (event) {
-        document.querySelector("#ex3-animals").append(document.querySelector("#ex3-animals li:first-child"))
-    })
-
+document.querySelector("#ex3 .js-btn-animal")
+    .addEventListener("click", function (event) {
+        document.querySelector("#ex3-animals")
+            .append(document.querySelector("#ex3-animals li:first-child"));
+    });
 
 /* ------------------------------------ */
 /* --- Exercice 4 --- */

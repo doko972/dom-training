@@ -104,17 +104,15 @@ function randomColor() {
 //     });
 
 
-const btnList = document.querySelector('#ex5-btn-list');
-btnList.addEventListener('mouseover', function (e) {
-    if (!e.target.classList.contains('button')) return;
-    
-    e.target.style.backgroundColor = randomColor();
-});
-btnList.addEventListener('mouseout', function (e) {
-    if (!e.target.classList.contains('button')) return;
+function setRandomColor(event) {
+    if (!event.target.classList.contains('button')) return;
 
-    e.target.style.backgroundColor = '';
-});
+    event.target.style.backgroundColor = event.target.style.backgroundColor ? '' : randomColor();
+}
+
+['mouseover', 'mouseout']
+    .forEach( eventType => document.querySelector('#ex5-btn-list').addEventListener(eventType, setRandomColor));
+
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */

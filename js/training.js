@@ -103,15 +103,12 @@ function randomColor() {
 //         });
 //     });
 
-
-function setRandomColor(event) {
-    if (!event.target.classList.contains('button')) return;
-
-    event.target.style.backgroundColor = event.target.style.backgroundColor ? '' : randomColor();
-}
-
 ['mouseover', 'mouseout']
-    .forEach( eventType => document.querySelector('#ex5-btn-list').addEventListener(eventType, setRandomColor));
+    .forEach(eventType => document.querySelector('#ex5-btn-list').addEventListener(eventType, (e) => {
+        if (!e.target.classList.contains('button')) return;
+
+        e.target.style.backgroundColor = e.target.style.backgroundColor ? '' : randomColor();
+    }));
 
 
 /* ------------------------------------ */

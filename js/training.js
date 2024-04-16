@@ -36,10 +36,10 @@ const btnEx4 = document.querySelector(".btnex4");
 const orgClass = btnEx4.className;
 
 console.log(orgClass);
-btnEx4.addEventListener("click", function(event) {
+btnEx4.addEventListener("click", function (event) {
     // METHOD 3
     this.className = orgClass + ' ' + arrayColors[i % arrayColors.length];
-    
+
     // METHOD 2
     // btnEx4.classList.add(arrayColors[i % arrayColors.length]);
     // btnEx4.classList.remove(arrayColors[(i - 1) % arrayColors.length]);
@@ -50,11 +50,11 @@ btnEx4.addEventListener("click", function(event) {
     //         btnEx4.classList.add("blue");
     //         btnEx4.classList.remove("green");
     //         break;
-            
+
     //     case 1:
     //         btnEx4.classList.replace("blue", "red");
     //         break;
-    
+
     //     default:
     //         btnEx4.classList.replace("red", "green");
     //         i = -1;
@@ -78,22 +78,43 @@ btnEx4.addEventListener("click", function(event) {
 
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
-function randomColor(){
-     colorValue = Math.floor(Math.random() * (256 ** 3))
-    return '#' + colorValue.toString(16)
+function randomColor() {
+    return '#' + Math.floor(Math.random() * (256 ** 3)).toString(16);
 }
 
-const btnsEx5 = document.querySelectorAll('#ex5 [type=button]')
-console.log(btnsEx5);
+// const btnsEx5 = document.querySelectorAll('#ex5 [type=button]');
 
-for(const btn of btnsEx5){
-    console.log(randomColor());
-    btn.addEventListener('pointerenter', function (e){
-        e.target.style.backgroundColor = randomColor();
-    })
-    btn.addEventListener('pointerout', function (e){
-        e.target.style.backgroundColor = ''; })
-}
+// for (const btn of btnsEx5) {
+//     btn.addEventListener('pointerenter', function (e) {
+//         e.target.style.backgroundColor = randomColor();
+//     })
+//     btn.addEventListener('pointerout', function (e) {
+//         e.target.style.backgroundColor = '';
+//     })
+// }
+
+// document.querySelectorAll('#ex5 [type=button]')
+//     .forEach(btn => {
+//         btn.addEventListener('pointerenter', function (e) {
+//             e.target.style.backgroundColor = randomColor();
+//         });
+//         btn.addEventListener('pointerout', function (e) {
+//             e.target.style.backgroundColor = '';
+//         });
+//     });
+
+
+const btnList = document.querySelector('#ex5-btn-list');
+btnList.addEventListener('mouseover', function (e) {
+    if (!e.target.classList.contains('button')) return;
+    
+    e.target.style.backgroundColor = randomColor();
+});
+btnList.addEventListener('mouseout', function (e) {
+    if (!e.target.classList.contains('button')) return;
+
+    e.target.style.backgroundColor = '';
+});
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */

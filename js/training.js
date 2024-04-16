@@ -78,7 +78,22 @@ btnEx4.addEventListener("click", function(event) {
 
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
+function randomColor(){
+     colorValue = Math.floor(Math.random() * (256 ** 3))
+    return '#' + colorValue.toString(16)
+}
 
+const btnsEx5 = document.querySelectorAll('#ex5 [type=button]')
+console.log(btnsEx5);
+
+for(const btn of btnsEx5){
+    console.log(randomColor());
+    btn.addEventListener('pointerenter', function (e){
+        e.target.style.backgroundColor = randomColor();
+    })
+    btn.addEventListener('pointerout', function (e){
+        e.target.style.backgroundColor = ''; })
+}
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */

@@ -31,24 +31,46 @@ const arrayColors = [
     "blue",
     "red",
     "green",
-]
+];
 const btnEx4 = document.querySelector(".btnex4");
-btnEx4.addEventListener("click", function(event) {
-    btnEx4.classList.add(arrayColors[i % arrayColors.length]);
-    btnEx4.classList.remove(arrayColors[(i - 1) % arrayColors.length]);
+const orgClass = btnEx4.className;
 
-    // if (arrayColors[i] === 0) {
+console.log(orgClass);
+btnEx4.addEventListener("click", function(event) {
+    // METHOD 3
+    this.className = orgClass + ' ' + arrayColors[i % arrayColors.length];
+    
+    // METHOD 2
+    // btnEx4.classList.add(arrayColors[i % arrayColors.length]);
+    // btnEx4.classList.remove(arrayColors[(i - 1) % arrayColors.length]);
+
+    // METHOD 1 bis
+    // switch (i) {
+    //     case 0:
+    //         btnEx4.classList.add("blue");
+    //         btnEx4.classList.remove("green");
+    //         break;
+            
+    //     case 1:
+    //         btnEx4.classList.replace("blue", "red");
+    //         break;
+    
+    //     default:
+    //         btnEx4.classList.replace("red", "green");
+    //         i = -1;
+    //         break;
+    // }
+
+    // METHOD 1
+    // if (i === 0) {
     //     btnEx4.classList.remove("green")
     // }
-    // if (count === 1) {
+    // if (i === 1) {
     //     btnEx4.classList.replace("blue", "red");
-        
     // }
-
-    // if (count === 2) {
+    // if (i === 2) {
     //     btnEx4.classList.replace("red", "green");
-    //     count = -1;
-
+    //     i = -1;
     // }
     i++;
 })

@@ -201,7 +201,20 @@ document.getElementById('ex7-list')
         }
     });
 
-
-
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
+
+
+function initProgressBar(buttonElement) {
+    let counter = 0;
+    const progressBarId = buttonElement.dataset.progressId;
+    const progressBar = document.getElementById(progressBarId);
+
+    buttonElement.addEventListener('click', function () {
+        if (counter >= 100) return;
+        counter += 5;
+        progressBar.style.width = counter + "%";
+    });
+}
+
+document.querySelectorAll("#ex8 [data-progress-id]").forEach(initProgressBar);

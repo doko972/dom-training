@@ -35,7 +35,6 @@ const arrayColors = [
 const btnEx4 = document.querySelector(".btnex4");
 const orgClass = btnEx4.className;
 
-console.log(orgClass);
 btnEx4.addEventListener("click", function (event) {
     // METHOD 3
     this.className = orgClass + ' ' + arrayColors[i % arrayColors.length];
@@ -114,6 +113,36 @@ function randomColor() {
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
 
+
+/**
+ * Animate text letter by letter with time interval.
+ * @param {element} element - DOM element containing text to animate
+ */
+function animateText(element) {
+    const textContent = element.innerText.split('');
+    element.textContent = "";
+    let index = 0;
+    const interval = setInterval(() => {
+        if (index >= textContent.length) {
+            clearInterval(interval);
+            return;
+        }
+
+        element.textContent += textContent[index];
+        index++;
+    }, 50);
+}
+
+// animateText(document.getElementById('ex6-paragraph'));
+
+// METHOD 2
+const element = document.getElementById('ex6-paragraph');
+const chars = element.innerText.split('');
+element.textContent = "";
+
+chars.forEach((letter, i) => {
+    setTimeout(() => element.textContent += letter, i * 50);
+});
 
 
 /* ------------------------------------ */

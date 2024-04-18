@@ -12,9 +12,9 @@
     <div class="container">
         <header class="header">
             <h1 class="main-ttl">Javascript et DOM</h1>
-            <nav class="main-nav">
+            <nav class="main-nav" aria-labelledby="navigation menu">
                 <ul class="main-nav-list">
-                    <li><a class="main-nav-link active" href="/">Entrainement</a></li>
+                    <li><a class="main-nav-link active" aria-current="active page" href="/">Entrainement</a></li>
                     <li><a class="main-nav-link" href="gallery.html">Galerie de photos</a></li>
                     <li><a class="main-nav-link" href="tabs.html">Navigation par onglets</a></li>
                     <li><a class="main-nav-link" href="salad.html">Composez votre salade</a></li>
@@ -24,10 +24,10 @@
 
         <!-- EXERCICE 1 -->
         <section class="exercice ex1" id="ex1">
-            <h2 class="exercice-ttl">Exercice 1</h2>
+            <h2 class="exercice-ttl" aria-label="fisrt exercice">Exercice 1</h2>
             <p class="exercice-txt">Au clic sur le bouton ci-dessous, masquez le paragraphe de texte à côté de lui s'il est affiché. S'il est masqué, affichez-le.</p>
             <div class="exercice-sandbox">
-                <button type="button" class="button" id="button1">Click me</button>
+                <button type="button" class="button" id="button1" aria-controls="text1">Click me</button>
                 <p class="text" id="text1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt est temporibus officia consequuntur illum optio quas omnis laudantium assumenda placeat? Laudantium aliquam illum voluptatem minima rem tempore adipisci at quasi?</p>
             </div>
         </section>
@@ -70,7 +70,7 @@
                 Puis il redevient bleu.
             </p>
             <div class="exercice-sandbox">
-                <button type="button" class="button btnex4">Click me</button>
+                <button type="button" class="button btnex4" id="button4" arial-controls="changecolor">Click me</button>
             </div>
         </section>
         
@@ -83,14 +83,14 @@
             </p>
             <div class="exercice-sandbox">
                 <ul class="flex-list" id="ex5-btn-list">
-                    <li><button type="button" class="button">👽</button></li>
-                    <li><button type="button" class="button">😱</button></li>
-                    <li><button type="button" class="button">🔭</button></li>
-                    <li><button type="button" class="button">🌌</button></li>
-                    <li><button type="button" class="button">🛸</button></li>
-                    <li><button type="button" class="button">🚀</button></li>
-                    <li><button type="button" class="button">🐵</button></li>
-                    <li><button type="button" class="button">👨‍🚀</button></li>
+                    <li><button type="button" class="button" aria-label="Alien">👽</button></li>
+                    <li><button type="button" class="button" aria-label="Scared">😱</button></li>
+                    <li><button type="button" class="button" aria-label="Telescope">🔭</button></li>
+                    <li><button type="button" class="button" aria-label="Galaxy">🌌</button></li>
+                    <li><button type="button" class="button" aria-label="Ovni">🛸</button></li>
+                    <li><button type="button" class="button" aria-label="Rocket">🚀</button></li>
+                    <li><button type="button" class="button" aria-label="Monkey">🐵</button></li>
+                    <li><button type="button" class="button" aria-label="Astronaut">👨‍🚀</button></li>
                 </ul>
             </div>
         </section>
@@ -149,7 +149,7 @@
                         <button type="button" id="ex8-button-level" class="button" data-progress-id="ex8-level">❤️</button>
 
                         <!-- Progress bar life -->
-                        <div class="progress">
+                        <div class="progress"role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                             <div id="ex8-level" class="progress-val progress-val-level"></div>
                         </div>
 
@@ -158,7 +158,7 @@
                         <button type="button" id="ex8-button-strength" class="button" data-progress-id="ex8-strength">⚔️</button>
                         
                         <!-- Progress bar strength -->
-                        <div class="progress">
+                        <div class="progress"role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                             <div id="ex8-strength" class="progress-val progress-val-strength"></div>
                         </div>
 
@@ -167,7 +167,7 @@
                         <button type="button" id="ex8-button-shield" class="button" data-progress-id="ex8-shield">🛡️</button>
 
                         <!-- Progress bar shield -->
-                        <div class="progress">
+                        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                             <div id="ex8-shield" class="progress-val progress-val-shield"></div>
                         </div>
 

@@ -42,23 +42,3 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    function removeIngredientFromSalad(removedIngredient) {
-        const index = selectedIngredients.indexOf(removedIngredient);
-        if (index !== -1) {
-            selectedIngredients.splice(index, 1);
-            selectedCount--;
-            updateSaladIngredientsList();
-        }
-    }
-
-    saladList.addEventListener('click', function(event) {
-        if (event.target.tagName === 'LI') {
-            const removedIngredient = event.target.textContent;
-            removeIngredientFromSalad(removedIngredient);
-            event.target.remove();
-        }
-    });
-
-    updateSaladIngredientsList();
-});
